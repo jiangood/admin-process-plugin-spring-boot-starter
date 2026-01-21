@@ -1,7 +1,7 @@
 package io.github.jiangood.as.modules.flowable.example;
 
 import io.github.jiangood.as.modules.flowable.config.meta.ProcessListener;
-import io.github.jiangood.as.modules.flowable.core.FlowableEventType;
+import io.github.jiangood.as.modules.flowable.core.ProcessEventType;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.Map;
 public class LeaveProcessListener implements ProcessListener {
 
     @Override
-    public void onProcessEvent(FlowableEventType type, String initiator, String businessKey, Map<String, Object> variables) {
+    public void onProcessEvent(ProcessEventType type, String initiator, String businessKey, Map<String, Object> variables) {
 
     }
 }

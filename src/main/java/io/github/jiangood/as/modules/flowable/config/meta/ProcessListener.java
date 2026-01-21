@@ -1,6 +1,6 @@
 package io.github.jiangood.as.modules.flowable.config.meta;
 
-import io.github.jiangood.as.modules.flowable.core.FlowableEventType;
+import io.github.jiangood.as.modules.flowable.core.ProcessEventType;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
@@ -18,7 +18,7 @@ public interface ProcessListener {
      * @param variables   变量
      */
     @Transactional
-    void onProcessEvent(FlowableEventType type, String initiator, String businessKey, Map<String, Object> variables);
+    void onProcessEvent(ProcessEventType type, String initiator, String businessKey, Map<String, Object> variables);
 
 
 }

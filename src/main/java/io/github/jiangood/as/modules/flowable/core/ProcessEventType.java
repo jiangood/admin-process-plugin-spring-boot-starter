@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 
 // 参考 FlowableEngineEventType， 名称保持一致
 @AllArgsConstructor
-public enum FlowableEventType {
+public enum ProcessEventType {
 
     TASK_ASSIGNED("任务分配"),
     TASK_COMPLETED("任务完成"),
@@ -24,9 +24,9 @@ public enum FlowableEventType {
     final String msg;
 
 
-    public static FlowableEventType findByName(String name) {
-        FlowableEventType[] values = values();
-        for (FlowableEventType value : values) {
+    public static ProcessEventType findByName(String name) {
+        ProcessEventType[] values = values();
+        for (ProcessEventType value : values) {
             if (value.name().equals(name)) {
                 return value;
             }
