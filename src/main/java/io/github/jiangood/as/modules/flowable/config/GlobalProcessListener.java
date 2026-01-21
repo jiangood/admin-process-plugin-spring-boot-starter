@@ -10,9 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.flowable.common.engine.api.delegate.event.FlowableEngineEventType;
 import org.flowable.common.engine.api.delegate.event.FlowableEvent;
 import org.flowable.common.engine.api.delegate.event.FlowableEventListener;
+import org.flowable.engine.HistoryService;
 import org.flowable.engine.delegate.event.impl.FlowableProcessEventImpl;
 import org.flowable.engine.impl.persistence.entity.ExecutionEntityImpl;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -29,12 +31,11 @@ public class GlobalProcessListener implements FlowableEventListener {
 
     @Override
     public void onEvent(FlowableEvent flowableEvent) {
-        log.info("流程事件 {}", flowableEvent);
+        log.info("流程事件 {}", flowableEvent.getType());
 
         if (!(flowableEvent instanceof FlowableProcessEventImpl event)) {
             return;
         }
-
 
 
         String typeName = flowableEvent.getType().name();
@@ -43,27 +44,30 @@ public class GlobalProcessListener implements FlowableEventListener {
             return;
         }
 
-
-
-        String instanceId = event.getProcessInstanceId();
         ExecutionEntityImpl execution = (ExecutionEntityImpl) event.getExecution();
         String definitionKey = execution.getProcessDefinitionKey();
 
         // 触发
         ProcessListener bizListener = getBizListener(definitionKey);
-        if(bizListener == null){
+        if (bizListener == null) {
             return;
         }
-
-
 
 
         Map<String, Object> variables = execution.getVariables();
         // String initiator = (String) variables.get("INITIATOR");
         String businessKey = execution.getBusinessKey();
         String initiator = execution.getStartUserId();
-        log.info("流程事件 类型 {} 定义 {} 业务标识 {} 发起人 {} ", definitionKey, event.getType(), businessKey, initiator);
 
+
+        if (businessKey == null || initiator == null) {
+            ExecutionEntityImpl processInstance = execution.getProcessInstance();
+            businessKey = processInstance.getBusinessKey();
+            initiator = processInstance.getStartUserId();
+        }
+        Assert.state(businessKey != null && initiator != null, "businessKey 或 initiator 不能为空");
+
+        log.info("流程事件 类型 {} 定义 {} 业务标识 {} 发起人 {} ", definitionKey, event.getType(), businessKey, initiator);
         bizListener.onProcessEvent(eventType, initiator, businessKey, variables);
     }
 
@@ -78,7 +82,6 @@ public class GlobalProcessListener implements FlowableEventListener {
         }
         return null;
     }
-
 
 
     @Override
@@ -100,13 +103,11 @@ public class GlobalProcessListener implements FlowableEventListener {
     public Collection<? extends org.flowable.common.engine.api.delegate.event.FlowableEventType> getTypes() {
         Collection<FlowableEngineEventType> list = new ArrayList<>();
 
-        ProcessEventType[] target = ProcessEventType.values();
-
         FlowableEngineEventType[] sourceList = FlowableEngineEventType.values();
 
         for (FlowableEngineEventType flowableEngineEventType : sourceList) {
             ProcessEventType byName = ProcessEventType.findByName(flowableEngineEventType.name());
-            if(byName != null ){
+            if (byName != null) {
                 list.add(flowableEngineEventType);
             }
         }
