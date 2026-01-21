@@ -39,18 +39,24 @@ public class GlobalProcessListener implements FlowableEventListener {
             return;
         }
 
-        FlowableEventType eventType = FlowableEventType.valueOf(typeName);
+        FlowableEventType eventType = FlowableEventType.findByName(typeName);
+        if(eventType == null){
+            return;
+        }
 
         String instanceId = event.getProcessInstanceId();
         ExecutionEntityImpl execution = (ExecutionEntityImpl) event.getExecution();
         String definitionKey = execution.getProcessDefinitionKey();
 
 
+
+
         log.info("流程事件 {} {}", definitionKey, event.getType());
 
         Map<String, Object> variables = execution.getVariables();
-        String businessKey = (String) variables.get("BUSINESS_KEY");
-        String initiator = (String) variables.get("INITIATOR");
+       // String initiator = (String) variables.get("INITIATOR");
+        String businessKey = execution.getBusinessKey();
+        String initiator = execution.getStartUserId();
 
 
         // 触发
@@ -66,6 +72,11 @@ public class GlobalProcessListener implements FlowableEventListener {
         }
 
 
+    }
+
+    public static void main(String[] args) {
+        FlowableEventType eventType = FlowableEventType.valueOf("a");
+        System.out.println(eventType);
     }
 
 

@@ -11,7 +11,7 @@
     <groupId>io.github.jiangood</groupId>
     <artifactId>admin-process-plugin-spring-boot-starter</artifactId>
     <version>${revision}</version>
-    <name>Flowable - Admin Spring Boot Process Starter</name>
+    <name>Admin Spring Boot Process Starter</name>
     <description>基于Flowable的流程引擎插件</description>
     <url>https://github.com/jiangood/admin-process-plugin-spring-boot-starter</url>
     <licenses>
@@ -27,7 +27,7 @@
         <url>https://github.com/jiangood/admin-process-plugin-spring-boot-starter/tree/master</url>
     </scm>
     <properties>
-        <revision>1.0.0-SNAPSHOT</revision>
+        <revision>1.0.3-SNAPSHOT</revision>
         <java.version>17</java.version>
         <compile.version>17</compile.version>
         <maven.compiler.source>17</maven.compiler.source>

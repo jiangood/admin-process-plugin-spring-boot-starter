@@ -9,11 +9,6 @@ public enum FlowableEventType {
     TASK_ASSIGNED("任务分配"),
     TASK_COMPLETED("任务完成"),
 
-    /**
-     * 流程创建, 创建完成但尚未启动
-     * 用途：初始化设置、验证、预处理
-     */
-    PROCESS_CREATED("流程创建"),
 
     /**
      * 流程已开始，可以访问所有初始化变量
@@ -28,5 +23,15 @@ public enum FlowableEventType {
 
     final String msg;
 
+
+    public static FlowableEventType findByName(String name) {
+        FlowableEventType[] values = values();
+        for (FlowableEventType value : values) {
+            if (value.name().equals(name)) {
+                return value;
+            }
+        }
+        return null;
+    }
 
 }
