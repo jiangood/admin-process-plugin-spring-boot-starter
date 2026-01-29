@@ -37,7 +37,7 @@
         <dependency>
             <groupId>io.github.jiangood</groupId>
             <artifactId>admin-spring-boot-starter</artifactId>
-            <version>0.3.0</version>
+            <version>0.3.3</version>
         </dependency>
         <dependency>
             <groupId>org.flowable</groupId>
@@ -48,6 +48,14 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>config/application-process.yml</exclude>
+                </excludes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -71,6 +79,10 @@
                     <target>${compile.version}</target>
                     <compilerArgument>-Xlint:unchecked</compilerArgument>
                     <encoding>UTF-8</encoding>
+                        <excludes>
+                            <exclude>io/github/jiangood/as/AdminProcessPluginSpringBootStarterApplication.java</exclude>
+                            <exclude>io/github/jiangood/as/modules/flowable/example/**</exclude>
+                        </excludes>
                 </configuration>
             </plugin>
 

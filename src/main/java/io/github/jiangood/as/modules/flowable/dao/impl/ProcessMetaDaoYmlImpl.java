@@ -9,18 +9,25 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Component
 @AllArgsConstructor
 public class ProcessMetaDaoYmlImpl implements IProcessMetaDao {
 
+    public static final String PROCESS_YML = "config/application-process.yml";
+
     @Override
     public List<ProcessMeta> findProcessMetaList() {
-        InputStream is = ResourceUtil.getStream("config/application-process.yml");
-        ProcessMetaConfiguration cfg = YmlTool.parseYml(is, ProcessMetaConfiguration.class, "process");
-        return cfg.getList();
+        try {
+            InputStream is = ResourceUtil.getStream(PROCESS_YML);
+            ProcessMetaConfiguration cfg = YmlTool.parseYml(is, ProcessMetaConfiguration.class, "process");
+            return cfg.getList();
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
     }
-
 
 }
