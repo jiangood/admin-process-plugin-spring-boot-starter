@@ -27,7 +27,7 @@
         <url>https://github.com/jiangood/admin-process-plugin-spring-boot-starter/tree/master</url>
     </scm>
     <properties>
-        <revision>1.0.3-SNAPSHOT</revision>
+        <revision>1.0.6-SNAPSHOT</revision>
         <java.version>17</java.version>
         <compile.version>17</compile.version>
         <maven.compiler.source>17</maven.compiler.source>
