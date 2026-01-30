@@ -1,7 +1,7 @@
 package io.github.jiangood.openadmin.modules.flowable.config;
 
-import io.github.jiangood.as.framework.config.init.SystemHookEventType;
-import io.github.jiangood.as.framework.config.init.SystemHookService;
+import io.github.jiangood.openadmin.framework.config.init.SystemHookEventType;
+import io.github.jiangood.openadmin.framework.config.init.SystemHookService;
 import io.github.jiangood.openadmin.modules.flowable.config.meta.ProcessMeta;
 import io.github.jiangood.openadmin.modules.flowable.service.ProcessMetaService;
 import io.github.jiangood.openadmin.modules.flowable.service.ProcessService;

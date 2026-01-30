@@ -1,6 +1,6 @@
 package io.github.jiangood.openadmin.modules.flowable.config;
 
-import io.github.jiangood.as.common.tools.IdTool;
+import io.github.jiangood.openadmin.common.tools.IdTool;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.flowable.spring.SpringProcessEngineConfiguration;
