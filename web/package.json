@@ -8,7 +8,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@jiangood/admin-spring-boot-starter": "^0.3.3",
+    "@jiangood/open-admin": "^1.0.0",
     "@ant-design/icons": "^6.0.0",
     "@bpmn-io/properties-panel": "^3.34.0",
     "@tinymce/tinymce-react": "^6.0.0",

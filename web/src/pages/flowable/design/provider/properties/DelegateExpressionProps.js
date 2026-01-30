@@ -1,7 +1,7 @@
 import {isTextFieldEntryEdited, SelectEntry} from '@bpmn-io/properties-panel';
 import { useService } from 'bpmn-js-properties-panel';
 import { useEffect, useState } from '@bpmn-io/properties-panel/preact/hooks';
-import {HttpUtils} from "@jiangood/admin-spring-boot-starter";
+import {HttpUtils} from "@jiangood/openadmin";
 export  function DelegateExpressionProps () {
 
   return [

@@ -1,4 +1,4 @@
-import {FieldUserSelect, HttpUtils, Page, ProTable} from "@jiangood/admin-spring-boot-starter";
+import {FieldUserSelect, HttpUtils, Page, ProTable} from "@jiangood/openadmin";
 import {Button, Form, Modal} from "antd";
 import React from "react";
 

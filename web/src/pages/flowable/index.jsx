@@ -1,6 +1,6 @@
 import {Button, Popconfirm, Space} from 'antd';
 import React from 'react';
-import {ButtonList, HttpUtils, Page, PageUtils, ProTable} from "@jiangood/admin-spring-boot-starter";
+import {ButtonList, HttpUtils, Page, PageUtils, ProTable} from "@jiangood/openadmin";
 
 export default class extends React.Component {
 

@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Tabs} from "antd";
-import {HttpUtils, LinkButton, Page, PageLoading, PageUtils, ProTable} from "@jiangood/admin-spring-boot-starter";
+import {HttpUtils, LinkButton, Page, PageLoading, PageUtils, ProTable} from "@jiangood/openadmin";
 
 
 export default class extends React.Component {

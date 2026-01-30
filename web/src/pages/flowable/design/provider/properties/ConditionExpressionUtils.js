@@ -1,4 +1,4 @@
-import {StringUtils} from "@jiangood/admin-spring-boot-starter";
+import {StringUtils} from "@jiangood/openadmin";
 
 
 export class ConditionExpressionUtils {

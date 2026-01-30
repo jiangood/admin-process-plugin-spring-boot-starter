@@ -1,5 +1,5 @@
 import React from "react";
-import {Gap, HttpUtils, Page, PageUtils, ProTable} from "@jiangood/admin-spring-boot-starter";
+import {Gap, HttpUtils, Page, PageUtils, ProTable} from "@jiangood/openadmin";
 import {Card, Empty, Skeleton, Table} from "antd";
 
 export default class extends React.Component {

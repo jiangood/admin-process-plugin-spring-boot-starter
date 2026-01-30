@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Card, Form, Input} from "antd";
-import {HttpUtils, MessageUtils, PageLoading, PageUtils, StringUtils} from "@jiangood/admin-spring-boot-starter";
+import {HttpUtils, MessageUtils, PageLoading, PageUtils, StringUtils} from "@jiangood/openadmin";
 
 export default class extends React.Component {
 

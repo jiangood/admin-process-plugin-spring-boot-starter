@@ -1,5 +1,5 @@
 import {Button, Popconfirm, Space} from "antd";
-import {HttpUtils, PageUtils, ProTable} from "@jiangood/admin-spring-boot-starter";
+import {HttpUtils, PageUtils, ProTable} from "@jiangood/openadmin";
 import React from "react";
 
 export default class extends React.Component {

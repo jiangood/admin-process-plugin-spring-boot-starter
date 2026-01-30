@@ -1,5 +1,5 @@
 import React from "react";
-import {HttpUtils, ProTable} from "@jiangood/admin-spring-boot-starter";
+import {HttpUtils, ProTable} from "@jiangood/openadmin";
 
 export default class extends React.Component {
 

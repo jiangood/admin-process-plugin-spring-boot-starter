@@ -3,7 +3,7 @@ import {
     FieldRemoteSelect,
     FieldRemoteSelectMultipleInline,
     StringUtils
-} from "@jiangood/admin-spring-boot-starter";
+} from "@jiangood/openadmin";
 import React from "react";
 import {renderReact} from "./utils";
 

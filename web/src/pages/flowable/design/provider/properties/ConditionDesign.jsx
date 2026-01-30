@@ -1,6 +1,6 @@
 import {Button, Input, InputNumber, Modal, Select} from "antd";
 import {Component} from "react";
-import {FieldBoolean, FieldTable, HttpUtils, ObjectUtils, StringUtils, ThemeUtils} from "@jiangood/admin-spring-boot-starter";
+import {FieldBoolean, FieldTable, HttpUtils, ObjectUtils, StringUtils, ThemeUtils} from "@jiangood/openadmin";
 import {ConditionExpressionUtils} from "./ConditionExpressionUtils";
 
 
