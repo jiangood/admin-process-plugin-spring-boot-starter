@@ -2,8 +2,8 @@ package io.github.jiangood.openadmin.modules.flowable.controller;
 
 
 import cn.hutool.core.util.StrUtil;
-import io.github.jiangood.openadmin.common.dto.AjaxResult;
-import io.github.jiangood.openadmin.common.tools.PageTool;
+import io.github.jiangood.openadmin.lang.dto.AjaxResult;
+import io.github.jiangood.openadmin.lang.PageTool;
 import io.github.jiangood.openadmin.framework.log.Log;
 import io.github.jiangood.openadmin.modules.common.LoginTool;
 import io.github.jiangood.openadmin.modules.flowable.dto.response.MonitorTaskResponse;

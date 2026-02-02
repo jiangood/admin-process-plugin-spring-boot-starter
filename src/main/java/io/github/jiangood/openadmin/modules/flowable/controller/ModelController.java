@@ -2,11 +2,11 @@ package io.github.jiangood.openadmin.modules.flowable.controller;
 
 import cn.hutool.core.lang.Dict;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import io.github.jiangood.openadmin.common.dto.AjaxResult;
-import io.github.jiangood.openadmin.common.dto.antd.Option;
-import io.github.jiangood.openadmin.common.tools.PageTool;
-import io.github.jiangood.openadmin.common.tools.SpringTool;
-import io.github.jiangood.openadmin.common.tools.annotation.RemarkTool;
+import io.github.jiangood.openadmin.lang.dto.AjaxResult;
+import io.github.jiangood.openadmin.lang.dto.antd.Option;
+import io.github.jiangood.openadmin.lang.PageTool;
+import io.github.jiangood.openadmin.lang.SpringTool;
+import io.github.jiangood.openadmin.lang.annotation.RemarkTool;
 import io.github.jiangood.openadmin.framework.data.specification.Spec;
 import io.github.jiangood.openadmin.framework.log.Log;
 import io.github.jiangood.openadmin.modules.flowable.config.meta.FormDefinition;

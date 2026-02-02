@@ -1,7 +1,7 @@
 package io.github.jiangood.openadmin.modules.flowable.dao.impl;
 
 import cn.hutool.core.io.resource.ResourceUtil;
-import io.github.jiangood.openadmin.common.tools.YmlTool;
+import io.github.jiangood.openadmin.lang.YmlTool;
 import io.github.jiangood.openadmin.modules.flowable.config.ProcessMetaConfiguration;
 import io.github.jiangood.openadmin.modules.flowable.config.meta.ProcessMeta;
 import io.github.jiangood.openadmin.modules.flowable.dao.IProcessMetaDao;
